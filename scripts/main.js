@@ -26,7 +26,7 @@ var arr = [];
 arr.push(123);
 
 console.log(arr);
-
+//bracket notation
 var array = [];
 var method;
 method = "push";
@@ -34,5 +34,28 @@ array[method]([123], [1]);
 method = "pop";
 array[method]();
 console.log(array);
+
+//Identifying reference type using instanceof
+console.log(array instanceof Array);
+
+//Primitive wrapper types
+
+var name = new String("Nayomi");
+
+console.log(typeof name);
+
+function sum() {
+  let result = 0;
+  let i = 0;
+  let len = arguments.length;
+
+  while (i < len) {
+    result += arguments[i];
+    i++;
+  }
+  return result;
+}
+
+console.log(sum(2, 4, 1, 4, 6, 7, 100));
 
 object = null;
