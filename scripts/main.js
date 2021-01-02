@@ -102,4 +102,23 @@ const person4 = {
   name: "Nicholas",
 };
 
+//To check the existence of a property in an object
 
+console.log("name" in person4);
+
+//to delete a property in an object
+
+delete person4.name;
+
+console.log("name" in person4);
+console.log(person4.hasOwnProperty("name"));
+
+//Object.defineProperty(object, property, {values})
+var car = {};
+
+Object.defineProperty(car, "brand", {
+  value: "Toyota",
+  enumerable: true,
+  configurable: true,
+  writable: true,
+});
