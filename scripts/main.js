@@ -25,7 +25,6 @@ console.log(object1);
 var arr = [];
 arr.push(123);
 
-console.log(arr);
 //bracket notation
 var array = [];
 var method;
@@ -33,16 +32,15 @@ method = "push";
 array[method]([123], [1]);
 method = "pop";
 array[method]();
-console.log(array);
 
 //Identifying reference type using instanceof
-console.log(array instanceof Array);
+// console.log(array instanceof Array);
 
 //Primitive wrapper types
 
-var name = new String("Nayomi");
+// var name = new String("Nayomi");
 
-console.log(typeof name);
+// console.log(typeof name);
 
 function sum() {
   let result = 0;
@@ -56,6 +54,52 @@ function sum() {
   return result;
 }
 
-console.log(sum(2, 4, 1, 4, 6, 7, 100));
+// console.log(sum(2, 4, 1, 4, 6, 7, 100));
 
-object = null;
+function sayNameAll() {
+  console.log(this.name);
+}
+
+var person1 = {
+  name: "Bryant",
+  sayName: sayNameAll,
+};
+
+var person2 = {
+  name: "Oden",
+  sayName: sayNameAll,
+};
+
+var name = "Mark";
+
+// person1.sayName();
+// person2.sayName();
+// sayNameAll();
+
+var arrayObject = new Array();
+
+function newUser(email, code, ref) {
+  var user = {
+    email,
+    code,
+    ref,
+  };
+  arrayObject.push(user);
+}
+
+newUser("test@google.com", "xxx", 0);
+newUser("test1@google.com", "xxy", 1);
+newUser("test2@google.com", "xyz", 2);
+
+// console.log(arrayObject);
+
+//Can create javascript objects with  object constructors or object literals
+
+const person3 = new Object();
+person3.name = "Nichole";
+
+const person4 = {
+  name: "Nicholas",
+};
+
+
