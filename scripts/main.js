@@ -113,7 +113,7 @@ delete person4.name;
 console.log("name" in person4);
 console.log(person4.hasOwnProperty("name"));
 
-//Object.defineProperty(object, property, {values})
+//Object.defineProperty(object, property, {accessorProperties})
 var car = {};
 
 Object.defineProperty(car, "brand", {
@@ -122,3 +122,41 @@ Object.defineProperty(car, "brand", {
   configurable: true,
   writable: true,
 });
+
+//Getters and Setters
+
+var car1 = {
+  _brand: "Toyota",
+
+  get brand() {
+    console.log("Reading brand");
+    return this._brand;
+  },
+
+  set brand(value) {
+    console.log("Brand is %s");
+    this._brand = value;
+  },
+};
+
+//Retrieving Property Attributes
+
+var descriptor = Object.getOwnPropertyDescriptor(car, "brand");
+
+console.log(descriptor.enumerable);
+
+//Preventing Extensions
+
+console.log(Object.isExtensible(car));
+Object.preventExtensions(car);
+console.log(Object.isExtensible(car));
+
+//Object.seal()
+console.log(Object.isExtensible(car1));
+Object.seal(car1);
+console.log(Object.isExtensible(car1));
+console.log(Object.isSealed(car1));
+
+//Freezing an object using object.freeze()
+
+console.log();
